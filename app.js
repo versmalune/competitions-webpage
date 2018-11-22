@@ -8,7 +8,7 @@ var sassMiddleware = require('node-sass-middleware');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var flash = require('connect-flash');
-var mongoose = require('mongoose');
+var mongoose   = require('mongoose');
 var passport = require('passport');
 
 var index = require('./routes/index');
@@ -25,7 +25,6 @@ app.set('view engine', 'pug');
 if (app.get('env') === 'development') {
   app.locals.pretty = true;
 }
-
 
 // Pug의 local에 moment라이브러리와 querystring 라이브러리를 사용할 수 있도록.
 app.locals.moment = require('moment');
@@ -102,23 +101,15 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-
-app.use(express.static(path.join(__dirname, 'public'))); //static한 access들 처리하는 것 -> 읽어 주고 public 디렉토리에 있으면 넘김
-
-app.use('/', indexRouter); // '/'이 패턴이면 indexRouter 사용
-app.use('/users', usersRouter);
-
-
-
 // error handler
-app.use(function(err, req, res, next) { //에러 핸들러
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};  //개발환경일 때만 error 메시지 띄움, production 환경일 떄는 안 보여 줌 -> 해킹됨
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500); //err.status 넘어왔으면 그것 쓰고 아니면 500 씀 (500번대 error는 internal error)
-  res.render('error'); //렌더 - error라는 템플릿 가지고 찍음
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 module.exports = app;
