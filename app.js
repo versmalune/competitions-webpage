@@ -1,12 +1,21 @@
-var createError = require('http-errors'); //import랑 비슷한 기능, node_modules 아래에서 http-errors 찾음 (아래 require() 전부))
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var session = require('express-session');
+var methodOverride = require('method-override');
+var flash = require('connect-flash');
+var mongoose   = require('mongoose');
+var passport = require('passport');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var index = require('./routes/index');
+var users = require('./routes/users');
+var questions = require('./routes/questions');
+
+var passportConfig = require('./lib/passport-config');
 
 var app = express();
 
