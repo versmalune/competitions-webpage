@@ -8,7 +8,7 @@ var sassMiddleware = require('node-sass-middleware');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var flash = require('connect-flash');
-var mongoose   = require('mongoose');
+var mongoose = require('mongoose');
 var passport = require('passport');
 
 var index = require('./routes/index');
@@ -47,7 +47,6 @@ mongoose.connection.on('error', console.error);
 // https://www.favicon-generator.org/ 여기서 만들어볼 수 있어요.
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
