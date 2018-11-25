@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title MJ Overflow
+    title 공모공모
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
@@ -11,6 +11,13 @@ html
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js')
     script(src='/javascripts/application.js')
   body
+    block header
+      include ./includes/header
+    block search
+      .container
+        form.form-inline.search-input-group(action='/questions', method='GET')
+          i.fa.fa-search
+          input.form-control.mr-sm-2(type='text', name='term', placeholder='Search', aria-label='Search', value=term)
     block top-nav
       include ./includes/topnav
     block hero-unit
