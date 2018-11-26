@@ -1,9 +1,48 @@
 .form-group
-  label(for="title") Title
-  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
+  label(for="title") 공모전 이름
+  input.form-control(type="text", name="title", placeholder="공모전 이름을 입력하세요", value=question.title)
 .form-group
-  label(for="question") Question
-  textarea.form-control(name="content", rows="5")= question.content
+  label(for="organization") 주최사
+  input.form-control(type="text", name="organization", placeholder="주최사를 입력하세요", value=question.organization)
+.form-group
+  label(for="parts") 분야 <br>
+    input(type="checkbox", name="parts", value=question.parts)
+    | 아이디어
+    input(type="checkbox", name="parts", value=question.parts)
+    | 광고
+    input(type="checkbox", name="parts", value=question.parts)
+    | 논문
+    input(type="checkbox", name="parts", value=question.parts)
+    | 영상 <br>
+    input(type="checkbox", name="parts", value=question.parts)
+    | 디자인
+    input(type="checkbox", name="parts", value=question.parts)
+    | 게임
+    input(type="checkbox", name="parts", value=question.parts)
+    | 소프트웨어
+    input(type="checkbox", name="parts", value=question.parts)
+    | 문학
+.form-group
+  .checkbox
+    label(for="applicant") 응시 대상 <br>
+      input(type='radio', name='applicant', value=question.applicant, checked='')
+      | 고등학생
+      input(type='radio', name='applicant', value=question.applicant, checked='')
+      | 대학생
+      input(type='radio', name='applicant', value=question.applicant, checked='')
+      | 취업 준비생
+.form-group
+  label(for="deadline") 접수 기간
+  input.form-control(type="date", name="deadline", value=question.deadline)
+.form-group
+  label(for="content") 공모 요강
+  textarea.form-control(name="content", rows="5")=question.content
+.form-group
+  label(for="manager") 담당자
+  input.form-control(type="text", name="manager", placeholder="담당자 이름을 입력하세요", value=question.manager)
+.form-group
+  label(for="contact") 연락처
+  input.form-control(type="text", name="contact", placeholder="연락처를 입력하세요", value=question.contact)
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")

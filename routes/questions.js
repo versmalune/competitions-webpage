@@ -81,7 +81,13 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
   var question = new Question({
     title: req.body.title,
     author: user._id,
+    organization: req.body.organization,
+    parts: req.body.parts,
+    applicant: req.body.applicant,
+    deadline: req.body.deadline,
     content: req.body.content,
+    manager: req.body.manager,
+    contact: req.body.contact,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
