@@ -28,8 +28,14 @@ router.post('', catchErrors(async (req, res, next) => {
   var question = new Question({
     title: req.body.title,
     author: req.user._id,
+    organization: req.body.organization,
+    parts: req.body.parts,
+    applicant: req.body.applicant,
+    deadline: req.body.deadline,
     content: req.body.content,
-    tags: req.body.tags.map(e => e.trim()),
+    manager: req.body.manager,
+    contact: req.body.contact,
+    tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
   res.json(question)
