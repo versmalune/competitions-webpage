@@ -24,8 +24,10 @@ block content
           .form-group
             .checkbox
               label(for="admin") 관리자 <br>
-                input(type='radio', name='admin', value="adminl", checked='false')
+                input(type='radio', name='admin', value="admin", checked='false')
                 | 관리자 권한 부여
+                input(type='radio', name='admin', value="", checked='false')
+                | 관리자 권한 비부여
               
       a.btn.btn-outline-secondary(href='javascript:window.history.back();') Back 
       | 
