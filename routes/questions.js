@@ -96,7 +96,9 @@ const upload = multer({
   }
 });
 
-router.post('/', needAuth, catchErrors(async (req, res, next) => {
+
+
+router.post('/', needAuth, upload.single('img'), catchErrors(async (req, res, next) => {
   const user = req.user;
   var question = new Question({
     title: req.body.title,
