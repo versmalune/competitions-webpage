@@ -1,11 +1,11 @@
 .container.
-    organized: #[h6= question.organization] organized,
-    .content= question.parts
-    .content= question.applicant
-    .content= question.deadline
-    .content= question.manager
-    .content= question.contact
-    .content= question.content
+    organized: #[h6= question.organization]
+    organized: #[h6= question.parts]
+    organized: #[h6= question.applicant]
+    organized: #[h6= question.deadline]
+    organized: #[h6= question.manager]
+    organized: #[h6= question.contact]
+    organized: #[h6= question.content]
 .tags.badges
   each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
