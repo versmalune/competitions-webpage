@@ -75,7 +75,8 @@ router.put('/:id', needAuth, catchErrors(async (req, res, next) => {
   }
 
   user.name = req.body.name;
-  user.email = req.body.email;
+  user.email = req.body.email
+  user.admin = req.body.admin;
   if (req.body.password) {
     user.password = await user.generateHash(req.body.password);
   }
