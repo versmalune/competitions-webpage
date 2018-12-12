@@ -18,7 +18,7 @@ block content
           img.img-fluid.rounded-circle(src= user.facebook.photo)
 
     hr
-    if user.admin
+    if user.admin == "admin"
     p
       a.btn.btn-outline-secondary(href='/users/') List
       | 
