@@ -16,6 +16,7 @@ var schema = new Schema({
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
+  img: {type: String},
   createdAt: {type: Date, default: Date.now}
 }, {
   toJSON: { virtuals: true},
