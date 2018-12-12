@@ -66,7 +66,14 @@ router.put('/:id', catchErrors(async (req, res, next) => {
     return res.redirect('back');
   }
   question.title = req.body.title;
+  question.author = req.body.author;
+  question.organization = req.body.organization;
+  question.parts = req.body.parts;
+  question.applicant = req.body.applicant;
+  question.deadline = req.body.applicant;
   question.content = req.body.content;
+  question.manager = req.body.manager;
+  question.contact = req.body.contact;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
 
   await question.save();
