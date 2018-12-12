@@ -1,6 +1,3 @@
-extends ../layout
-
-block content
     .container
         .content= question.organization
         .content= question.parts
@@ -9,18 +6,3 @@ block content
         .content= question.manager
         .content= question.contact
 
-
-extends ../layout
-
-block content
-  .container
-    h1.main-title= user.name
-          
-    dl.row
-      dt.col-sm-3 Email
-      dd.col-sm-9
-        a(href=`mailto:${user.email}`)= user.email
-
-      dt.col-sm-3 Created At
-      dd.col-sm-9= user.createdAt
-      

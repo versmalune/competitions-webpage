@@ -16,7 +16,7 @@ block content
         each question in questions.docs
           .question
             a.title(href=`/questions/${question.id}`)= question.title
-            include _details
+            include _question
 
       +paginate(questions, '/questions', query)
 
