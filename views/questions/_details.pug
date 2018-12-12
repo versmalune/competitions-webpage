@@ -1,10 +1,11 @@
 .container
-    | organized by: #[.content= question.organization]
+    | organized by: #[h6= question.organization]
     .content= question.parts
     .content= question.applicant
-    .content= question.deadline
+    .content= question.deadline.format('YYYY-MM-DD')
     .content= question.manager
     .content= question.contact
+    .content= question.content
 .tags.badges
   each tag in question.tags
     span.badge.badge-phill.badge-secondary= tag
