@@ -12,7 +12,7 @@ block content
           button.btn.btn-primary.question-like-btn(data-id=question.id) 
             span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
             span #[i.fa.fa-thumbs-up] Like
-          if question.author && question.author.id == currentUser.id
+          if question.author && question.author.id == currentUser.id || currentUser.admin == "admin"
             | 
             a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
             | 
